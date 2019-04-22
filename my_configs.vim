@@ -51,16 +51,6 @@ Plugin 'klen/python-mode'
 Plugin 'tmhedberg/simpylfold'
 Plugin 'tweekmonster/braceless.vim'
 Plugin 'bash-support.vim'
-Plugin 'luchermitte/lh-vim-lib'
-Plugin 'luchermitte/lh-tags'
-Plugin 'luchermitte/lh-cpp'
-Plugin 'glench/vim-jinja2-syntax'
-Plugin 'Vim-Support'
-Plugin 'chrisbra/csv.vim'
-Plugin 'ap/vim-css-color'
-Plugin 'ekalinin/dockerfile.vim'
-Plugin 'rstacruz/sparkup'
-Plugin 'jvanja/vim-bootstrap4-snippets'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

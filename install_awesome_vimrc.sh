@@ -1,6 +1,7 @@
 #!/bin/sh
 mkdir -p ~/.vim_runtime
 cp -rf ./* ~/.vim_runtime
+
 # set -e
 
 cd ~/.vim_runtime
@@ -29,12 +30,14 @@ echo "install YouCompleteMe..."
 dist=`grep DISTRIB_ID /etc/*-release | awk -F '=' '{print $2}'`
 
 if [ "$dist" = "Ubuntu" ]; then
-    echo "ubuntu..."
-    sudo apt-get install vim-youcompleteme
-    sudo apt-get install vim-addon-manager
-    vim install youcompleteme
+    echo "Ubuntu..."
+    sudo apt-get install vim-youcompleteme -y
+    sudo apt-get install vim-addon-manager -y
+    vam remove youcompleteme
+    vam install youcompleteme
 else
-    echo "not ubuntu..."
+    echo "FAIL: install YouCompleteMe!"
+    return 1
 fi
 
 echo "Installed the Ultimate Vim configuration successfully! Enjoy :-)"
