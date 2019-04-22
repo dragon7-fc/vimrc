@@ -1,5 +1,7 @@
 #!/bin/sh
-set -e
+mkdir -p ~/.vim_runtime
+cp -rf ./* ~/.vim_runtime
+# set -e
 
 cd ~/.vim_runtime
 
@@ -14,5 +16,25 @@ try
 source ~/.vim_runtime/my_configs.vim
 catch
 endtry' > ~/.vimrc
+
+# install vundle
+echo "install vundle..."
+if [ ! -d "~/.vim/bundle/" ]; then
+    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+fi
+vim +PluginInstall +qall
+
+# install YouCompleteMe
+echo "install YouCompleteMe..."
+dist=`grep DISTRIB_ID /etc/*-release | awk -F '=' '{print $2}'`
+
+if [ "$dist" = "Ubuntu" ]; then
+    echo "ubuntu..."
+    sudo apt-get install vim-youcompleteme
+    sudo apt-get install vim-addon-manager
+    vim install youcompleteme
+else
+    echo "not ubuntu..."
+fi
 
 echo "Installed the Ultimate Vim configuration successfully! Enjoy :-)"
