@@ -1,7 +1,7 @@
 #!/bin/sh
-mkdir -p ~/.vim_runtime
+rm ~/.vim_runtime
+mkdir ~/.vim_runtime
 cp -rf ./* ~/.vim_runtime
-
 # set -e
 
 cd ~/.vim_runtime
@@ -18,25 +18,25 @@ source ~/.vim_runtime/my_configs.vim
 catch
 endtry' > ~/.vimrc
 
-# install vundle
-echo "install vundle..."
-if [ ! -d "~/.vim/bundle/" ]; then
-    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-fi
-vim +PluginInstall +qall
-
 # install YouCompleteMe
 echo "install YouCompleteMe..."
 dist=`grep DISTRIB_ID /etc/*-release | awk -F '=' '{print $2}'`
+ver=`grep DISTRIB_RELEASE /etc/*-release | awk -F '=' '{print $2}'`
 
 if [ "$dist" = "Ubuntu" ]; then
-    echo "Ubuntu..."
-    sudo apt-get install vim-youcompleteme -y
-    sudo apt-get install vim-addon-manager -y
-    vam remove youcompleteme
-    vam install youcompleteme
+    if [ "$ver" = "14.04" ]; then
+        sudo apt install build-essential cmake3 python3-dev -y
+    elif [ "$ver" = "16.04" ]; then
+        sudo apt install build-essential cmake python3-dev
+    else
+        echo "FAIL: compile YouCompleteMe!"
+        return 1
+    fi
+    cd ~/.vim_runtime/my_plugins/youcompleteme
+    git submodule update --init --recursive
+    ./install.py --clang-completer
 else
-    echo "FAIL: install YouCompleteMe!"
+    echo "FAIL: compile YouCompleteMe!"
     return 1
 fi
 
