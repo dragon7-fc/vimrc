@@ -32,8 +32,7 @@ if [ "$dist" = "Ubuntu" ]; then
         echo "FAIL: compile YouCompleteMe!"
         return 1
     fi
-    cd ~/.vim_runtime/my_plugins/youcompleteme
-    git submodule update --init --recursive
+    cd ~/.vim_runtime/my_plugins/YouCompleteMe
     ./install.py --clang-completer
 else
     echo "FAIL: compile YouCompleteMe!"
