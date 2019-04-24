@@ -1,5 +1,6 @@
-#!/bin/sh
-rm ~/.vim_runtime
+#!/bin/bash
+echo "copy to /.run_time ..."
+rm -rf ~/.vim_runtime
 mkdir ~/.vim_runtime
 cp -rf ./* ~/.vim_runtime
 # set -e
@@ -20,23 +21,30 @@ endtry' > ~/.vimrc
 
 # install YouCompleteMe
 echo "install YouCompleteMe..."
-dist=`grep DISTRIB_ID /etc/*-release | awk -F '=' '{print $2}'`
-ver=`grep DISTRIB_RELEASE /etc/*-release | awk -F '=' '{print $2}'`
+if [ "$(uname)" == "Darwin"  ]; then
+    # MAC OS
+    cd ~/.vim_runtime/my_plugins/YouCompleteMe
+    ./install.py --clang-completer
 
-if [ "$dist" = "Ubuntu" ]; then
-    if [ "$ver" = "14.04" ]; then
-        sudo apt install build-essential cmake3 python3-dev -y
-    elif [ "$ver" = "16.04" ]; then
-        sudo apt install build-essential cmake python3-dev
+elif [ "$(expr substr $(uname -s) 1 5)" == "Linux"  ]; then
+    dist=`grep DISTRIB_ID /etc/*-release | awk -F '=' '{print $2}'`
+    ver=`grep DISTRIB_RELEASE /etc/*-release | awk -F '=' '{print $2}'
+
+    # UBuntu`
+    if [ "$dist" == "Ubuntu" ]; then
+        if [ "$ver" == "14.04" ]; then
+            sudo apt install build-essential cmake3 python3-dev -y
+        elif [ "$ver" == "16.04" ]; then
+            sudo apt install build-essential cmake python3-dev
+        else
+            echo "FAIL: compile YouCompleteMe!"
+            return 1
+        fi
+        cd ~/.vim_runtime/my_plugins/YouCompleteMe
+        ./install.py --clang-completer
     else
         echo "FAIL: compile YouCompleteMe!"
         return 1
     fi
-    cd ~/.vim_runtime/my_plugins/YouCompleteMe
-    ./install.py --clang-completer
-else
-    echo "FAIL: compile YouCompleteMe!"
-    return 1
 fi
-
 echo "Installed the Ultimate Vim configuration successfully! Enjoy :-)"
