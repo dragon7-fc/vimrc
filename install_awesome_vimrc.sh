@@ -24,7 +24,7 @@ echo "install YouCompleteMe..."
 if [ "$(uname)" == "Darwin"  ]; then
     # MAC OS
     cd ~/.vim_runtime/my_plugins/YouCompleteMe
-    ./install.py --clang-completer
+    ./install.py --all
 
 elif [ "$(expr substr $(uname -s) 1 5)" == "Linux"  ]; then
     dist=`grep DISTRIB_ID /etc/*-release | awk -F '=' '{print $2}'`
@@ -41,7 +41,7 @@ elif [ "$(expr substr $(uname -s) 1 5)" == "Linux"  ]; then
             return 1
         fi
         cd ~/.vim_runtime/my_plugins/YouCompleteMe
-        ./install.py --clang-completer
+        ./install.py --all
     else
         echo "FAIL: compile YouCompleteMe!"
         return 1
