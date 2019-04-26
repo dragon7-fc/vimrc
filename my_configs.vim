@@ -16,7 +16,8 @@ let g:NERDTreeWinPos = "left"
 " => Ack
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 noremap <leader>g  <leader>a
-noremap <leader>a  :Ack
+noremap <leader>a  :tab split<CR>:Ack ""<Left>
+noremap <leader>A  :tab split<CR>:Ack <C-r><C-w><CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Tagbar

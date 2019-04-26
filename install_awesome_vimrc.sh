@@ -1,5 +1,5 @@
 #!/bin/bash
-echo "copy to /.run_time ..."
+echo "copy to /.vim_runtime ..."
 rm -rf ~/.vim_runtime
 mkdir ~/.vim_runtime
 cp -rf ./* ~/.vim_runtime
