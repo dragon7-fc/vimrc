@@ -24,7 +24,7 @@ echo "install YouCompleteMe..."
 if [ "$(uname)" == "Darwin"  ]; then
     # MAC OS
     cd ~/.vim_runtime/my_plugins/YouCompleteMe
-    ./install.py --all
+    /usr/bin/python ./install.py --all
 
 elif [ "$(expr substr $(uname -s) 1 5)" == "Linux"  ]; then
     dist=`grep DISTRIB_ID /etc/*-release | awk -F '=' '{print $2}'`
