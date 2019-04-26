@@ -13,11 +13,15 @@ map <Leader>hof :%!xxd -r<CR>
 let g:NERDTreeWinPos = "left"
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Ag
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+noremap <leader>a  :tab split<CR>:Ag! ""<Left>
+noremap <leader>A  :tab split<CR>:Ag <C-r><C-w><CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Ack
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-noremap <leader>g  <leader>a
-noremap <leader>a  :tab split<CR>:Ack ""<Left>
-noremap <leader>A  :tab split<CR>:Ack <C-r><C-w><CR>
+unmap <leader>g
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Tagbar
