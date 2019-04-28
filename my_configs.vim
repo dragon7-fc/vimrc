@@ -56,8 +56,7 @@ nnoremap <leader>oi  :YcmCompleter OrganizeImports<Space>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => python-mode
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" let g:pymode_python = 'python3'
-
+nmap <leader>pl :PymodeLintAuto<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vim-javascript
