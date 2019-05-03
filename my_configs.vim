@@ -3,9 +3,20 @@ set number
 " Enable Mouse
 set mouse=a
 
+" Search & Backward Searchh
+map <Space> <Space>
+map <C-Space> <C-Space>
+
+
 " USING VIM AS HEX EDITOR
-map <Leader>hon :%!xxd<CR>
+map <Leader>hon :%!xxd -g1<CR>
 map <Leader>hof :%!xxd -r<CR>
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => ctags
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap <leader>t <C-]><CR>
+nnoremap <leader>tt :set tags=tags<cr>
+nnoremap <leader>ttt :! sudo ctags --exclude=webui_html5_libs-* -R .<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Nerd Tree
