@@ -93,6 +93,16 @@ let g:csv_no_conceal = 1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => SrcExpl
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" The switch of the Source Explorer
-nmap <F7> :SrcExplToggle<CR>
+" The switch of the Source Explorer 
+nmap <F7> :SrcExplToggle<CR> 
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => CCTree
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nmap <leader>cc :CCTreeLoadDB cscope.out<CR>
+nmap <leader>ccc :!cscope -Rbq<CR>
+nmap <leader>c> <C-\>>
+nmap <leader>c< <C-\><
+nmap <leader>c= <C-\>=
+nmap <leader>c- <C-\>-
 
