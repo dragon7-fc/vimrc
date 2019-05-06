@@ -90,3 +90,9 @@ let g:no_csv_maps = 1
 let g:csv_highlight_column = 'y'
 let g:csv_no_conceal = 1
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => SrcExpl
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" The switch of the Source Explorer
+nmap <F7> :SrcExplToggle<CR>
+
