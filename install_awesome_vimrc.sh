@@ -47,4 +47,39 @@ elif [ "$(expr substr $(uname -s) 1 5)" == "Linux"  ]; then
         return 1
     fi
 fi
+
+# install vim-autoformat
+echo "install vim-autoformat..."
+npm install -g js-beautify
+npm install -g standard
+npm install eslint
+npm install -g xo
+npm install -g typescript-formatter
+npm install -g remark-cli
+npm install -g fixjson
+pip install black
+pip install yapf
+pip install sqlparse
+gem install sass
+gem install ruby-beautify
+if [ "$(uname)" == "Darwin"  ]; then
+    # MAC OS
+    brew install llvm
+    brew install autopep8
+
+elif [ "$(expr substr $(uname -s) 1 5)" == "Linux"  ]; then
+    dist=`grep DISTRIB_ID /etc/*-release | awk -F '=' '{print $2}'`
+    ver=`grep DISTRIB_RELEASE /etc/*-release | awk -F '=' '{print $2}'
+
+    # UBuntu`
+    if [ "$dist" == "Ubuntu" ]; then
+        sudo apt-get install python-autopep8
+        sudo apt-get install tidy
+    else
+        echo "FAIL: install vim-Autoformater!"
+        return 1
+    fi
+fi
+
+
 echo "Installed the Ultimate Vim configuration successfully! Enjoy :-)"
