@@ -50,20 +50,20 @@ fi
 
 # install vim-autoformat
 echo "install vim-autoformat..."
-npm install -g js-beautify
-npm install -g standard
-npm install eslint
-npm install -g xo
-npm install -g typescript-formatter
-npm install -g remark-cli
-npm install -g fixjson
-pip install black
-pip install yapf
-pip install sqlparse
-gem install sass
-gem install ruby-beautify
 if [ "$(uname)" == "Darwin"  ]; then
     # MAC OS
+    npm install -g js-beautify
+    npm install -g standard
+    npm install eslint
+    npm install -g xo
+    npm install -g typescript-formatter
+    npm install -g remark-cli
+    npm install -g fixjson
+    pip install black
+    pip install yapf
+    pip install sqlparse
+    gem install sass
+    gem install ruby-beautify
     brew install llvm
     brew install autopep8
 
@@ -73,13 +73,24 @@ elif [ "$(expr substr $(uname -s) 1 5)" == "Linux"  ]; then
 
     # UBuntu`
     if [ "$dist" == "Ubuntu" ]; then
-        sudo apt-get install python-autopep8
-        sudo apt-get install tidy
+        sudo npm install -g js-beautify
+        sudo npm install -g standard
+        sudo npm install eslint
+        sudo npm install -g xo
+        sudo npm install -g typescript-formatter
+        sudo npm install -g remark-cli
+        sudo npm install -g fixjson
+        sudo -E pip install black
+        sudo -E pip install yapf
+        sudo -E pip install sqlparse
+        sudo gem install sass
+        sudo gem install ruby-beautify
+        sudo apt-get install python-autopep8 -y
+        sudo apt-get install tidy -y
     else
         echo "FAIL: install vim-Autoformater!"
         return 1
     fi
 fi
-
 
 echo "Installed the Ultimate Vim configuration successfully! Enjoy :-)"

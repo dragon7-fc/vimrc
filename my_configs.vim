@@ -99,12 +99,12 @@ nmap <F7> :SrcExplToggle<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => CCTree
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nmap <leader>cc :CCTreeLoadDB cscope.out<CR>
-nmap <leader>ccc :!cscope -Rbq<CR>
-nmap <leader>c> <C-\>>
-nmap <leader>c< <C-\><
-nmap <leader>c= <C-\>=
-nmap <leader>c- <C-\>-
+nmap <leader>ss :CCTreeLoadDB cscope.out<CR>
+nmap <leader>sss :!cscope -Rbq<CR>
+nmap <leader>s> <C-\>>
+nmap <leader>s< <C-\><
+nmap <leader>s= <C-\>=
+nmap <leader>s- <C-\>-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vim-autoformat 
