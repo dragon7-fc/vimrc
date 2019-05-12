@@ -22,9 +22,6 @@ nmap <leader>ttt :! sudo ctags --exclude=webui_html5_libs-* -R .<cr>
 " => Nerd Tree
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:NERDTreeWinPos = "left"
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
 
 """"""""""""""""""""""""""""""
 " => CTRL-P
@@ -110,4 +107,14 @@ nmap <leader>s- <C-\>-
 " => vim-autoformat 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 noremap <F5> :Autoformat<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => undotree
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap <F6> :UndotreeToggle<cr>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => vim-pydocstring
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab
 
