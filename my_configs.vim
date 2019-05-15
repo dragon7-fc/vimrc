@@ -47,6 +47,7 @@ nmap <F8> :TagbarToggle<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => YouCompleteMe
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:ycm_server_python_interpreter='/usr/local/bin/python'
 let g:ycm_key_invoke_completion = '<S-Tab>'
 imap <S-Tab> <NUL>
 nmap <leader>gi  :YcmCompleter GoToInclude<CR>
@@ -96,12 +97,12 @@ nmap <F7> :SrcExplToggle<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => CCTree
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nmap <leader>ss :CCTreeLoadDB cscope.out<CR>
-nmap <leader>sss :!cscope -Rbq<CR>
-nmap <leader>s> <C-\>>
-nmap <leader>s< <C-\><
-nmap <leader>s= <C-\>=
-nmap <leader>s- <C-\>-
+nmap <leader>uu :CCTreeLoadDB cscope.out<CR>
+nmap <leader>uuu :!cscope -Rbq<CR>
+nmap <leader>u> <C-\>>
+nmap <leader>u< <C-\><
+nmap <leader>u= <C-\>=
+nmap <leader>u- <C-\>-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vim-autoformat 
