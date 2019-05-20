@@ -27,6 +27,7 @@ let g:NERDTreeWinPos = "left"
 " => CTRL-P
 """"""""""""""""""""""""""""""
 let g:ctrlp_map = '<c-p>'
+let g:ctrlp_max_files=0
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Ag
