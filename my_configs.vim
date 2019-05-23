@@ -32,8 +32,8 @@ let g:ctrlp_max_files=0
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Ag
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nmap <leader>a  :tab split<CR>:Ag! ""<Left>
-nmap <leader>A  :tab split<CR>:Ag <C-r><C-w><CR>
+nmap <leader>a  :Ag! ""<Left>
+nmap <leader>A  :Ag <C-r><C-w><CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Ack
@@ -121,4 +121,9 @@ nnoremap <F6> :UndotreeToggle<cr>
 " => vim-pydocstring
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => vim-dirdiff
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nmap <leader>dd  :DirDiff <dir1> <dir2><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left>
 
