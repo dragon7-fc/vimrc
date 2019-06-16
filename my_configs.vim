@@ -11,6 +11,10 @@ map <C-Space> <C-Space>
 " USING VIM AS HEX EDITOR
 map <Leader>hon :%!xxd -g1<CR>
 map <Leader>hof :%!xxd -r<CR>
+
+" Buffer diff
+map <Leader>wd :windo diffthis<CR>
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => ctags
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
