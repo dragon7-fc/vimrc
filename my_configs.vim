@@ -53,7 +53,7 @@ nmap <F8> :TagbarToggle<CR>
 " => YouCompleteMe
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if has('macunix')
-    let g:ycm_server_python_interpreter='/usr/local/bin/python'
+    let g:ycm_server_python_interpreter='/usr/bin/python'
 endif
 let g:ycm_key_invoke_completion = '<S-Tab>'
 imap <S-Tab> <NUL>
