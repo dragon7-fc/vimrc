@@ -28,10 +28,9 @@ nmap <leader>ttt :! sudo ctags --exclude=webui_html5_libs-* -R .<cr>
 let g:NERDTreeWinPos = "left"
 
 """"""""""""""""""""""""""""""
-" => CTRL-P
+" => fzf
 """"""""""""""""""""""""""""""
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_max_files=0
+nmap <leader>f :Files<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Ag
