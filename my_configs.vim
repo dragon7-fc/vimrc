@@ -30,7 +30,9 @@ let g:NERDTreeWinPos = "left"
 """"""""""""""""""""""""""""""
 " => fzf
 """"""""""""""""""""""""""""""
-nmap <leader>f :Files<CR>
+let g:ctrlp_map = ''
+let g:ctrlp_cmd = ''
+nmap <C-p> :Files<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Ag
