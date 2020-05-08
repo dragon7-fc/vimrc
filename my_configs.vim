@@ -7,7 +7,6 @@ set mouse=a
 map <Space> <Space>
 map <C-Space> <C-Space>
 
-
 " USING VIM AS HEX EDITOR
 map <Leader>hon :%!xxd -g1<CR>
 map <Leader>hof :%!xxd -r<CR>
@@ -33,6 +32,7 @@ let g:NERDTreeWinPos = "left"
 let g:ctrlp_map = ''
 let g:ctrlp_cmd = ''
 nmap <C-p> :Files<CR>
+nmap <leader>b :Buffers<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Ag
