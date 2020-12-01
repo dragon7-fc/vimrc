@@ -15,13 +15,6 @@ map <Leader>hof :%!xxd -r<CR>
 map <Leader>wd :windo diffthis<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => ctags
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nmap <leader>t <C-]><CR>
-nmap <leader>tt :set tags=tags<cr>
-nmap <leader>ttt :! sudo ctags --exclude=webui_html5_libs-* -R .<cr>
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Nerd Tree
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:NERDTreeWinPos = "left"
