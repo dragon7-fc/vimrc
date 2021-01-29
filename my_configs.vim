@@ -11,32 +11,18 @@ map <C-Space> <C-Space>
 map <Leader>hon :%!xxd -g1<CR>
 map <Leader>hof :%!xxd -r<CR>
 
-" Buffer diff
-map <Leader>wd :windo diffthis<CR>
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Nerd Tree
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:NERDTreeWinPos = "left"
 
-""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => fzf
-""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:ctrlp_map = ''
 let g:ctrlp_cmd = ''
 nmap <C-p> :Files<CR>
 nmap <leader>b :Buffers<cr>
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Ag
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nmap <leader>a  :Ag! ""<Left>
-nmap <leader>A  :Ag <C-r><C-w><CR>
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Ack
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-unmap <leader>g
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Tagbar
@@ -44,30 +30,19 @@ unmap <leader>g
 nmap <F8> :TagbarToggle<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Rainbow
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:rainbow_active = 1
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => YouCompleteMe
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:ycm_collect_identifiers_from_tags_files = 1
 if has('macunix')
-    let g:ycm_server_python_interpreter='/usr/bin/python'
+    let g:ycm_server_python_interpreter='/usr/local/bin/python3'
 endif
-let g:ycm_key_invoke_completion = '<S-Tab>'
+let g:ycm_key_invoke_completion = '<c-/>'
 imap <S-Tab> <NUL>
-nmap <leader>gi  :YcmCompleter GoToInclude<CR>
-nmap <leader>gd  :YcmCompleter GoToDeclaration<CR>
-nmap <leader>gf  :YcmCompleter GoToDefinition<CR>
-nmap <leader>g   :YcmCompleter GoTo<CR>
-nmap <leader>gti :YcmCompleter GoToImprecise<CR>
-nmap <leader>gr  :YcmCompleter GoToReferences<CR>
-nmap <leader>gi  :YcmCompleter GoToImplementation<CR>
-nmap <leader>gid :YcmCompleter GoToImplementationElseDeclaration<CR>
-nmap <leader>gt  :YcmCompleter GoToType<CR>
-nmap <leader>gti :YcmCompleter GetTypeImprecise<CR>
-nmap <leader>gp  :YcmCompleter GetParent<CR>
-nmap <leader>gc  :YcmCompleter GetDoc<CR>
-nmap <leader>gdi :YcmCompleter GetDocImprecise<CR>
-nmap <leader>fi  :YcmCompleter FixIt<CR>
-nmap <leader>rr  :YcmCompleter RefactorRename<Space>
-nmap <leader>fm  :YcmCompleter Format<Space>
-nmap <leader>oi  :YcmCompleter OrganizeImports<Space>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -94,16 +69,6 @@ let g:csv_no_conceal = 1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " The switch of the Source Explorer 
 nmap <F7> :SrcExplToggle<CR> 
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => CCTree
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nmap <leader>uu :CCTreeLoadDB cscope.out<CR>
-nmap <leader>uuu :!cscope -Rbq<CR>
-nmap <leader>u> <C-\>>
-nmap <leader>u< <C-\><
-nmap <leader>u= <C-\>=
-nmap <leader>u- <C-\>-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vim-autoformat 
